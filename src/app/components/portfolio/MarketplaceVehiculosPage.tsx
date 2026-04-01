@@ -1,4 +1,4 @@
-import imgMockup from "figma:asset/a5fe14a57e84bf094609cc85f4bc6dc50966249b.png";
+import imgMockup from "../../../assets/a5fe14a57e84bf094609cc85f4bc6dc50966249b.png";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function MarketplaceVehiculosPage() {

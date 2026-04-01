@@ -1,4 +1,4 @@
-import imgMockup from "figma:asset/b359b2013cac8fea9fc63e0d9ee92216f32612d6.png";
+import imgMockup from "../../../assets/b359b2013cac8fea9fc63e0d9ee92216f32612d6.png";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function PortalArchivoPage() {
