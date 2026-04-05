@@ -1,12 +1,12 @@
 import svgPaths from "./svg-mma2ks5ed6";
-import imgImagePortalArchivo from "../assets/2ad2b322681168a61808bb158f03e8d16fd03c67.png";
-import imgImage2 from "../assets/9efc07517d654967338deadd81e4c2d1c382e30c.png";
-import imgImageMarketplaceDeVehiculos from "../assets/e26468e0159c228f6109a0199f177e942d569ddb.png";
-import imgImage3 from "../assets/78e61488754f7d3031964b49201c5496665f6d51.png";
-import imgImageViviendaGtc from "../assets/383085b406413cacce39098deb5b49faa2f8627c.png";
-import imgImage4 from "../assets/f94cf1b90856c36272357f67dde572cc5979a109.png";
-import imgImageTipoDeCambio from "../assets/424832ab422170b8acffe6a9d27b64a03e08962c.png";
-import imgImage5 from "../assets/8d1c8b8b685763dc052c69f8cb08eae93de3fc54.png";
+import imgImagePortalArchivo from "figma:asset/2ad2b322681168a61808bb158f03e8d16fd03c67.png";
+import imgImage2 from "figma:asset/9efc07517d654967338deadd81e4c2d1c382e30c.png";
+import imgImageMarketplaceDeVehiculos from "figma:asset/e26468e0159c228f6109a0199f177e942d569ddb.png";
+import imgImage3 from "figma:asset/78e61488754f7d3031964b49201c5496665f6d51.png";
+import imgImageViviendaGtc from "figma:asset/383085b406413cacce39098deb5b49faa2f8627c.png";
+import imgImage4 from "figma:asset/f94cf1b90856c36272357f67dde572cc5979a109.png";
+import imgImageTipoDeCambio from "figma:asset/424832ab422170b8acffe6a9d27b64a03e08962c.png";
+import imgImage5 from "figma:asset/8d1c8b8b685763dc052c69f8cb08eae93de3fc54.png";
 
 function Text() {
   return <div className="bg-[#e8ff4d] opacity-61 rounded-[30504000px] shrink-0 size-[7.997px]" data-name="Text" />;

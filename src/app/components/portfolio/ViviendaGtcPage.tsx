@@ -1,4 +1,4 @@
-import imgMockup from "../../../assets/cb7abe904d4ae4ceb10b3ec6a72c033d8bd9f7a7.png";
+import imgMockup from "figma:asset/cb7abe904d4ae4ceb10b3ec6a72c033d8bd9f7a7.png";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function ViviendaGtcPage() {

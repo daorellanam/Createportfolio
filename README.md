@@ -1,7 +1,7 @@
 
-  # Create Portfolio
+  # Portfolio Diego
 
-  This is a code bundle for Create Portfolio. The original project is available at https://www.figma.com/design/Ys9k5ujzetMT9zVMrdst5g/Create-Portfolio.
+  This is a code bundle for Portfolio Diego. The original project is available at https://www.figma.com/design/Ys9k5ujzetMT9zVMrdst5g/Portfolio-Diego.
 
   ## Running the code
 
