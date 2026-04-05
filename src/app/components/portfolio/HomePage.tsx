@@ -10,6 +10,7 @@ import imgImage4 from "figma:asset/f94cf1b90856c36272357f67dde572cc5979a109.png"
 import imgImageTipoDeCambio from "figma:asset/424832ab422170b8acffe6a9d27b64a03e08962c.png";
 import imgImage5 from "figma:asset/8d1c8b8b685763dc052c69f8cb08eae93de3fc54.png";
 import { Navbar } from "./Navbar";
+import IllustrationDelivery from "../../../imports/IllustrationDelivery";
 
 const projects = [
   {
@@ -245,13 +246,6 @@ export function HomePage() {
   const aboutRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [sent, setSent] = useState(false);
-
   useEffect(() => {
     const state = location.state as {
       scrollTo?: string;
@@ -278,13 +272,6 @@ export function HomePage() {
     ref: React.RefObject<HTMLElement | null>,
   ) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
   };
 
   return (
@@ -471,8 +458,8 @@ export function HomePage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left col — info, left-aligned */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left col — info */}
           <div className="text-left">
             <h3 className="font-['Space_Grotesk',sans-serif] font-bold text-[clamp(48px,6vw,72px)] leading-[1] tracking-[-0.03em] mb-6">
               <span className="text-white block">
@@ -504,81 +491,11 @@ export function HomePage() {
             </a>
           </div>
 
-          {/* Right col — form, aligned to fill right side */}
-          <div>
-            {sent ? (
-              <div className="flex items-center justify-center min-h-[300px] border border-white/10">
-                <p className="font-['Space_Grotesk',sans-serif] text-white/50 text-center text-[14px]">
-                  ✓ Message sent! I'll get back to you soon.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-4"
-              >
-                <div className="flex flex-col gap-2">
-                  <label className="font-['Space_Grotesk',sans-serif] font-medium text-[11px] text-white/40 tracking-[1.44px] uppercase">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData((p) => ({
-                        ...p,
-                        name: e.target.value,
-                      }))
-                    }
-                    placeholder="Your name"
-                    className="bg-transparent border border-white/15 px-4 py-3 font-['Space_Grotesk',sans-serif] text-[14px] text-white placeholder-white/25 outline-none focus:border-white/40 transition-colors"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-['Space_Grotesk',sans-serif] font-medium text-[11px] text-white/40 tracking-[1.44px] uppercase">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData((p) => ({
-                        ...p,
-                        email: e.target.value,
-                      }))
-                    }
-                    placeholder="your@email.com"
-                    className="bg-transparent border border-white/15 px-4 py-3 font-['Space_Grotesk',sans-serif] text-[14px] text-white placeholder-white/25 outline-none focus:border-white/40 transition-colors"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-['Space_Grotesk',sans-serif] font-medium text-[11px] text-white/40 tracking-[1.44px] uppercase">
-                    Message
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData((p) => ({
-                        ...p,
-                        message: e.target.value,
-                      }))
-                    }
-                    placeholder="Tell me about your project..."
-                    className="bg-transparent border border-white/15 px-4 py-3 font-['Space_Grotesk',sans-serif] text-[14px] text-white placeholder-white/25 outline-none focus:border-white/40 transition-colors resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="bg-white text-black font-['Space_Grotesk',sans-serif] font-bold text-[12px] tracking-[1.68px] uppercase py-3 hover:bg-white/90 active:bg-white/80 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            )}
+          {/* Right col — illustration */}
+          <div className="flex items-center justify-center w-full">
+            <div className="w-full max-w-[480px]" style={{ aspectRatio: "402.857 / 369.52" }}>
+              <IllustrationDelivery />
+            </div>
           </div>
         </div>
       </section>
