@@ -1,4 +1,4 @@
-import imgMockup from "figma:asset/a5fe14a57e84bf094609cc85f4bc6dc50966249b.png";
+import videoMockup from "../../../imports/vehiculos_(1).mp4";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function MarketplaceVehiculosPage() {
@@ -10,7 +10,7 @@ export function MarketplaceVehiculosPage() {
       title="Marketplace de Vehículos"
       description="Developing a visual and interactive vehicle marketplace experience within gtc.com.gt that allows users to fully explore the journey—from browsing the landing page to selecting a new vehicle, requesting a quote, and completing an immediate prequalification."
       tags={["UX UI DESIGN", "WEB", "RESPONSIVE", "PRODUCT DESIGN"]}
-      mockupImage={imgMockup}
+      mockupVideo={videoMockup}
       mockupAlt="Marketplace de Vehículos mockup"
       overview={`The Vehicle Marketplace is a visual and interactive experience designed within gtc.com.gt to allow users to fully explore the vehicle purchasing journey—from initial browsing to quotation and immediate prequalification. The platform supports both exploratory users with no purchase intent and users ready to select a vehicle and start a financial process.\n\nThe solution prioritizes clarity, personalization, and guided decision‑making across the entire experience.`}
       challenge={`Users interested in purchasing a vehicle faced fragmented journeys, limited financial visibility, and unclear paths between exploration and formal acquisition. There was a need to validate whether users could confidently move from browsing to prequalification without friction, confusion, or easy abandonment.\n\nAdditionally, the marketplace needed to support multiple user intents—casual exploration, comparison, financial simulation, and formal acquisition—within a single coherent experience.`}

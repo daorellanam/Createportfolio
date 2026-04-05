@@ -10,7 +10,8 @@ interface CaseStudyLayoutProps {
   title: string;
   description: string;
   tags: string[];
-  mockupImage: string;
+  mockupImage?: string;
+  mockupVideo?: string;
   mockupAlt?: string;
   overview: string;
   challenge: string;
@@ -124,6 +125,7 @@ export function CaseStudyLayout({
   description,
   tags,
   mockupImage,
+  mockupVideo,
   mockupAlt,
   overview,
   challenge,
@@ -182,20 +184,37 @@ export function CaseStudyLayout({
       </header>
 
       {/* ─── Mockup / Hero image ─── */}
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ height: "clamp(260px, 42vw, 580px)" }}
-      >
-        <img
-          src={mockupImage}
-          alt={mockupAlt || title}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-        />
+      {mockupVideo ? (
+        <div className="relative w-full overflow-hidden">
+          <video
+            src={mockupVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto block"
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-[3px]"
+            style={{ backgroundColor: accentColor }}
+          />
+        </div>
+      ) : (
         <div
-          className="absolute bottom-0 left-0 right-0 h-[3px]"
-          style={{ backgroundColor: accentColor }}
-        />
-      </div>
+          className="relative w-full overflow-hidden"
+          style={{ height: "clamp(260px, 42vw, 580px)" }}
+        >
+          <img
+            src={mockupImage}
+            alt={mockupAlt || title}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-[3px]"
+            style={{ backgroundColor: accentColor }}
+          />
+        </div>
+      )}
 
       {/* ─── Body: two-column layout exactly as in the Figma frame ─── */}
       <div className="px-6 md:px-10 lg:px-16 py-14">
