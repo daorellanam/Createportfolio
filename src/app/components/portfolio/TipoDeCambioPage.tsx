@@ -1,4 +1,4 @@
-import tipoDeCambioImg from "../../assets/8e12ad280096f8f1a2b7a740b369c1d92cc6080b"
+import imgMockup from "../../assets/8e12ad280096f8f1a2b7a740b369c1d92cc6080b.png"
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function TipoDeCambioPage() {
