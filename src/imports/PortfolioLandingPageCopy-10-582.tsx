@@ -1,5 +1,5 @@
 import svgPaths from "./svg-x7w1n2bjd3";
-import imgImage7 from "figma:asset/a5fe14a57e84bf094609cc85f4bc6dc50966249b.png";
+import imgImage7 from "../../assets/a5fe14a57e84bf094609cc85f4bc6dc50966249b.png";
 
 function Paragraph() {
   return (
