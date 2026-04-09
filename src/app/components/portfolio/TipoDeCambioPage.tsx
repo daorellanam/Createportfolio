@@ -1,4 +1,5 @@
 import imgMockup from "../../../assets/8e12ad280096f8f1a2b7a740b369c1d92cc6080b.png";
+import tipoDeCambioVideo from "../../../assets/tipo-de-cambio-video.mp4";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 
 export function TipoDeCambioPage() {
@@ -11,6 +12,7 @@ export function TipoDeCambioPage() {
       description="Designing a dedicated section to display the real‑time exchange rate from US dollars to Guatemalan quetzals, providing clear and accessible currency conversion information."
       tags={["UX UI DESIGN", "WEB", "RESPONSIVE", "PRODUCT DESIGN"]}
       mockupImage={imgMockup}
+      mockupVideo={tipoDeCambioVideo}
       mockupAlt="Tipo de Cambio mockup"
       overview={`The Exchange Rate project focused on designing a dedicated section that allows users to view the real‑time exchange rate from US dollars (USD) to Guatemalan quetzals (GTQ). The solution provides clear, reliable, and easily accessible currency information within the platform.\n\nThe feature supports users who require quick financial reference as part of broader decision‑making and transactional flows.`}
       challenge={`Users needed a simple and trustworthy way to check the current exchange rate without leaving the platform or navigating complex financial tools. Existing solutions were either hidden, unintuitive, or overloaded with unnecessary information.\n\nThe main challenge was to surface critical exchange rate data clearly, ensuring accuracy, readability, and contextual relevance without adding friction to the user experience.`}
