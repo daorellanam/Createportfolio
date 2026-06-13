@@ -1,15 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diego Orellana — Product Designer</title>
+  <meta name="description" content="Diego Orellana is a product and UX/UI designer in Guatemala City, designing conversion-driven interfaces for fintech, real estate, and digital marketplaces." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23142019'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%231AA46B'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Portfolio Diego</title>
-    </head>
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__label">View</span>
+  </div>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a class="nav__brand" href="#top" data-cursor>MoW<sup class="nav__sup">GT</sup></a>
+    <div class="nav__clock" aria-hidden="true">
+      <span class="nav__clock-label">GUA</span>
+      <span class="nav__clock-time" id="clock">--:--:--</span>
+      <span class="nav__clock-label">GMT−6</span>
+    </div>
+    <nav class="nav__links" aria-label="Main">
+      <a class="flip-link" href="#work" data-cursor><span class="flip-link__inner"><span>Work</span><span aria-hidden="true">Work</span></span></a>
+      <a class="flip-link" href="#about" data-cursor><span class="flip-link__inner"><span>About</span><span aria-hidden="true">About</span></span></a>
+      <a class="nav__cta" href="#contact" data-magnetic data-cursor>Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__status reveal-load" style="--d:.1s">
+        <span class="hero__dot" aria-hidden="true"></span>
+        <span class="hero__status-text">Available for work</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line"><span class="line__inner reveal-line" style="--d:.25s">Complex</span></span>
+        <span class="line"><span class="line__inner reveal-line" style="--d:.37s">decisions,</span></span>
+        <span class="line"><span class="line__inner reveal-line line__accent" style="--d:.49s">made simple.</span></span>
+      </h1>
+
+      <div class="hero__row">
+        <div class="hero__meta reveal-load" style="--d:.7s">
+          <div class="flap" aria-label="Roles: Product Designer, UX UI Designer, Web Designer">
+            <span class="flap__viewport">
+              <span class="flap__item is-current">Product Designer</span>
+            </span>
+          </div>
+          <p class="hero__coords">Guatemala City — 14.62°N, 90.52°W</p>
+        </div>
+        <div class="hero__copy reveal-load" style="--d:.8s">
+          <p class="hero__lede">I design digital experiences that simplify complex decisions and turn business goals into clear, usable products.</p>
+          <p class="hero__sub">Based in Guatemala, I work closely with product, engineering, and business teams to create intuitive interfaces focused on usability, conversion, and growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker reveal-load" style="--d:1s" aria-hidden="true">
+      <div class="ticker__track">
+        <!-- duplicated by JS for seamless loop -->
+        <span class="ticker__group">
+          <span>USD <em>⇄</em> GTQ</span><i>·</i>
+          <span>Fintech</span><i>·</i>
+          <span>Real estate</span><i>·</i>
+          <span>Marketplaces</span><i>·</i>
+          <span class="ticker__hot">Available for work</span><i>·</i>
+          <span>4+ years</span><i>·</i>
+          <span>Guatemala City, GMT−6</span><i>·</i>
+          <span>Conversion-driven design</span><i>·</i>
+        </span>
+      </div>
+    </div>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="section-head reveal">
+        <span class="section-head__label">Index</span>
+        <h2 class="section-head__title">Selected work</h2>
+        <span class="section-head__count">2025—2026 · 4 cases</span>
+      </div>
+
+      <ul class="ledger" id="ledger"><!-- rows injected by JS --></ul>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="section-head reveal">
+        <span class="section-head__label">Profile</span>
+        <h2 class="section-head__title">About</h2>
+        <span class="section-head__count">Diego Orellana</span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p class="about__para about__para--lead">I'm a UX/UI and product designer with a background in communication and design, focused on building conversion‑driven interfaces for fintech, real estate, and digital marketplaces. My work centers on clarity, usability, and scalable design systems that help users move confidently from exploration to action.</p>
+          <p class="about__para">I collaborate closely with product and engineering teams to design solutions that balance user needs, technical feasibility, and business impact — whether it's a vehicle marketplace, a digital mortgage flow, or a data‑driven platform.</p>
+          <p class="about__para">I believe good design should feel intuitive, reduce friction, and deliver measurable results.</p>
+        </div>
+        <dl class="facts reveal">
+          <div class="facts__row"><dt>Experience</dt><dd>4+ years</dd></div>
+          <div class="facts__row"><dt>Specialization</dt><dd>Product &amp; UX design</dd></div>
+          <div class="facts__row"><dt>Tools</dt><dd>Figma · Claude · Miro</dd></div>
+          <div class="facts__row"><dt>Education</dt><dd>B.A. Communication &amp; Design, Cum Laude</dd></div>
+          <div class="facts__row"><dt>Location</dt><dd>Guatemala City</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <span class="contact__label reveal">Contact</span>
+        <h2 class="contact__title">
+          <span class="line"><span class="line__inner reveal-scroll-line">Let's work</span></span>
+          <span class="line"><span class="line__inner reveal-scroll-line contact__title-accent" style="--d:.12s">together.</span></span>
+        </h2>
+        <p class="contact__copy reveal">Open to full-time roles, freelance projects, and design consultancy. I typically respond within 24 hours.</p>
+        <div class="contact__actions reveal">
+          <a class="contact__email" href="mailto:daorellanamgt@gmail.com" data-magnetic data-cursor>
+            daorellanamgt@gmail.com
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="flip-link contact__linkedin" href="https://linkedin.com/in/daorellanamgt" target="_blank" rel="noopener noreferrer" data-cursor>
+            <span class="flip-link__inner"><span>LinkedIn ↗</span><span aria-hidden="true">LinkedIn ↗</span></span>
+          </a>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>© 2026 MoW</span>
+        <span class="footer__mid" aria-hidden="true">Designed &amp; built in Guatemala</span>
+        <span class="footer__time" aria-hidden="true">Local time <span id="clock-footer">--:--</span> GMT−6</span>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ============ CASE OVERLAY ============ -->
+  <div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+    <div class="case__scroll">
+      <div class="case__bar">
+        <span class="case__ref" id="case-ref">01 / 04</span>
+        <button class="case__close" id="case-close" data-cursor aria-label="Close case study">
+          Close <span class="case__close-x" aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <div class="case__head">
+        <h2 class="case__title" id="case-title"></h2>
+        <div class="case__meta">
+          <div class="case__meta-item"><span>Year</span><strong id="case-year"></strong></div>
+          <div class="case__meta-item"><span>Role</span><strong id="case-role"></strong></div>
+          <div class="case__meta-item"><span>Scope</span><strong id="case-scope"></strong></div>
+        </div>
+        <ul class="case__tags" id="case-tags"></ul>
+      </div>
+      <figure class="case__media" id="case-media"></figure>
+      <div class="case__body" id="case-body"></div>
+      <button class="case__next" id="case-next" data-cursor>
+        <span class="case__next-label">Next case</span>
+        <span class="case__next-title" id="case-next-title"></span>
+        <svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating media preview for ledger rows -->
+  <div class="preview" id="preview" aria-hidden="true">
+    <div class="preview__media" id="preview-media"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

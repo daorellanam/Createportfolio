@@ -1,11 +1,25 @@
+# MoW — Portfolio
 
-  # Portfolio Diego
+Portfolio of Diego Orellana (MoW) — product & UX/UI designer based in Guatemala City.
 
-  This is a code bundle for Portfolio Diego. The original project is available at https://www.figma.com/design/Ys9k5ujzetMT9zVMrdst5g/Portfolio-Diego.
+Static site: hand-written HTML, CSS, and vanilla JS. No build step.
 
-  ## Running the code
+```
+.
+├── index.html      # markup
+├── styles.css      # "rate board" design system
+├── script.js       # micro-interactions, case-study data & overlays
+└── assets/         # case-study videos and posters
+```
 
-  Run `npm i` to install the dependencies.
+## Local preview
 
-  Run `npm run dev` to start the development server.
-  
+Any static server works, e.g.:
+
+```bash
+npx serve .
+# or
+python3 -m http.server 4173
+```
+
+Live: https://diegorellana-navy.vercel.app
