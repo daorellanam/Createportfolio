@@ -187,6 +187,7 @@ const caseEl = document.getElementById("case");
 const caseScroll = caseEl.querySelector(".case__scroll");
 let activeCase = -1;
 let lastFocus = null;
+let scrollLockY = 0;
 
 function openCase(idx, { focus = true } = {}) {
   const p = PROJECTS[idx];
@@ -219,6 +220,10 @@ function openCase(idx, { focus = true } = {}) {
 
   caseEl.hidden = false;
   requestAnimationFrame(() => requestAnimationFrame(() => caseEl.classList.add("is-open")));
+  if (!document.body.classList.contains("case-open")) {
+    scrollLockY = window.scrollY;
+    document.body.style.top = `-${scrollLockY}px`;
+  }
   document.body.classList.add("case-open");
   caseScroll.scrollTop = 0;
   if (focus) {
@@ -232,6 +237,8 @@ function openCase(idx, { focus = true } = {}) {
 function closeCase() {
   caseEl.classList.remove("is-open");
   document.body.classList.remove("case-open");
+  document.body.style.top = '';
+  window.scrollTo(0, scrollLockY);
   const media = document.getElementById("case-media");
   setTimeout(() => {
     caseEl.hidden = true;
