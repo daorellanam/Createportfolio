@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoW — Mini manual de marca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314201A'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,450;9..144,1,450&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root{--paper:#F7F6F2;--paper-2:#F1EFE9;--ink:#1A1A17;--ink-soft:#57544C;--ink-faint:#908C81;--line:#E3E0D8;--pino:#34503F;--shoyu:#E2542F;--shoyu-deep:#C23F1F;--amber:#F4B53F;--live:#2FA86B;--nori:#14201A;--nori-soft:#9FB0A6;--display:"Clash Display","Switzer",system-ui,sans-serif;--sans:"Switzer",system-ui,sans-serif;--mono:"Fragment Mono",ui-monospace,monospace;--serif:"Fraunces",Georgia,serif;--ease:cubic-bezier(0.22,1,0.36,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--sans);background:var(--paper-2);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5}
+    .nav-bar{display:flex;align-items:center;gap:12px;padding:16px clamp(20px,4vw,48px);background:var(--nori);flex-wrap:wrap}
+    .nav-bar__brand{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.03em;color:#fff;margin-right:auto}
+    .nav-bar__brand .o{color:var(--shoyu)}
+    .nav-bar a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--nori-soft);text-decoration:none;transition:color .2s}
+    .nav-bar a:hover{color:#fff}
+    .wrap{max-width:900px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px) 80px}
+    .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--shoyu);margin-bottom:14px}
+    .page-title{font-family:var(--display);font-weight:600;font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;line-height:1.02;margin-bottom:12px}
+    .page-title .it{font-family:var(--serif);font-style:italic;font-weight:450;color:var(--pino)}
+    .page-sub{font-size:16px;color:var(--ink-soft);max-width:52ch;margin-bottom:clamp(40px,6vw,64px)}
+    .section{margin-bottom:clamp(40px,6vw,64px)}
+    .section__head{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+    .section__num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--shoyu)}
+    .section__title{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em}
+    .logo-showcase{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(32px,6vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+    .logo-showcase__mark{font-family:var(--display);font-weight:600;font-size:clamp(60px,12vw,120px);letter-spacing:-.03em;line-height:1;display:flex;align-items:baseline}
+    .logo-showcase__mark .o{color:var(--shoyu)}
+    .logo-showcase__dark{background:var(--nori);border-radius:14px;padding:clamp(20px,4vw,40px);display:grid;place-items:center}
+    .logo-showcase__mark--inv{font-family:var(--display);font-weight:600;font-size:clamp(48px,9vw,96px);letter-spacing:-.03em;color:#fff;line-height:1}
+    .logo-showcase__mark--inv .o{color:var(--shoyu)}
+    .logo-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:12px}
+    .colors{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+    .swatch{border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+    .swatch__block{height:80px}
+    .swatch__info{padding:10px 12px;background:#fff}
+    .swatch__name{font-size:13px;font-weight:600;display:block}
+    .swatch__hex{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+    .type-row{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
+    .type-row__sample{line-height:1.2}
+    .type-row__meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+    .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .voice-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+    .voice-card__label{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+    .voice-card__label--yes{color:var(--pino)}
+    .voice-card__label--no{color:var(--shoyu)}
+    .voice-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+    .voice-card li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative}
+    .voice-card li::before{position:absolute;left:0}
+    .voice-card--yes li::before{content:"✓";color:var(--pino)}
+    .voice-card--no li::before{content:"✗";color:var(--shoyu)}
+    .usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .usage-tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+    .usage-tile__tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px}
+    .usage-tile h4{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:6px}
+    .usage-tile p{font-size:13px;color:var(--ink-soft);line-height:1.6}
+    @media(max-width:620px){.logo-showcase{grid-template-columns:1fr}.voice-grid{grid-template-columns:1fr}}
+    @media print{.nav-bar{background:var(--nori)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.swatch__block{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <span class="nav-bar__brand">M<span class="o">o</span>W</span>
+    <a href="index.html">← Inicio</a>
+    <a href="crm.html">CRM</a>
+    <a href="motion.html">Motion</a>
+  </nav>
+  <div class="wrap">
+    <p class="eyebrow">Mini manual · MoW</p>
+    <h1 class="page-title">Marca <span class="it">con criterio.</span></h1>
+    <p class="page-sub">Guía de identidad MoW — concepto, logotipo, colores, tipografía y tono de voz. Referencia de uso interno.</p>
+    <section class="section">
+      <div class="section__head"><span class="section__num">01</span><h2 class="section__title">Concepto de marca</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <div class="usage-tile"><p class="usage-tile__tag">Propósito</p><h4>Diseño que piensa y juega</h4><p>MoW es la marca personal de Diego Orellana, diseñador UX/UI con base en Guatemala. Combina craft meticuloso con apertura al juego y la experimentación.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Nombre</p><h4>¿Por qué MoW?</h4><p>Iniciales intervenidas — cercanas, reconocibles y fáciles de pronunciar. La «o» en rojo-naranja (Shoyu) es el acento visual que distingue la firma.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Posicionamiento</p><h4>UX/UI · Play · Craft</h4><p>Tres pilares: rigor en la experiencia de usuario, curiosidad lúdica y cuidado artesanal en cada detalle visual.</p></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__head"><span class="section__num">02</span><h2 class="section__title">Logotipo</h2></div>
+      <div class="logo-showcase">
+        <div><div class="logo-showcase__mark">M<span class="o">o</span>W</div><p class="logo-note">Versión positiva · fondo claro</p></div>
+        <div class="logo-showcase__dark"><div><div class="logo-showcase__mark--inv">M<span class="o">o</span>W</div><p class="logo-note" style="color:var(--nori-soft);margin-top:12px">Versión negativa · fondo Nori</p></div></div>
+      </div>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+        <div class="usage-tile"><p class="usage-tile__tag">Tipografía del logo</p><p>Clash Display · peso 600 · tracking −0.03em. Siempre letras mayúscula M y W, «o» minúscula.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Uso correcto</p><p>No cambiar proporciones. No usar colores distintos a los definidos. Mantener espacio libre equivalente a la altura de la «o» en todos los lados.</p></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__head"><span class="section__num">03</span><h2 class="section__title">Paleta de color</h2></div>
+      <div class="colors">
+        <div class="swatch"><div class="swatch__block" style="background:#E2542F"></div><div class="swatch__info"><span class="swatch__name">Shoyu</span><span class="swatch__hex">#E2542F · Acento primario</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#14201A"></div><div class="swatch__info"><span class="swatch__name">Nori</span><span class="swatch__hex">#14201A · Base oscura</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#34503F"></div><div class="swatch__info"><span class="swatch__name">Pino</span><span class="swatch__hex">#34503F · Complementario</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#F4B53F"></div><div class="swatch__info"><span class="swatch__name">Amber</span><span class="swatch__hex">#F4B53F · Alerta / énfasis</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#F7F6F2;border-bottom:1px solid #E3E0D8"></div><div class="swatch__info"><span class="swatch__name">Paper</span><span class="swatch__hex">#F7F6F2 · Fondo base</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#1A1A17"></div><div class="swatch__info"><span class="swatch__name">Ink</span><span class="swatch__hex">#1A1A17 · Texto principal</span></div></div>
+        <div class="swatch"><div class="swatch__block" style="background:#2FA86B"></div><div class="swatch__info"><span class="swatch__name">Live</span><span class="swatch__hex">#2FA86B · Disponible / éxito</span></div></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__head"><span class="section__num">04</span><h2 class="section__title">Tipografía</h2></div>
+      <div class="type-row"><div class="type-row__sample" style="font-family:'Clash Display',sans-serif;font-weight:600;font-size:clamp(28px,5vw,48px);letter-spacing:-.02em">Clash Display</div><span class="type-row__meta">Display · peso 600 · Títulos y logotipo</span></div>
+      <div class="type-row"><div class="type-row__sample" style="font-family:'Switzer',sans-serif;font-size:clamp(18px,3vw,28px)">Switzer — sans-serif cotidiano</div><span class="type-row__meta">Sans · pesos 400 / 500 / 600 · Cuerpo de texto, UI</span></div>
+      <div class="type-row"><div class="type-row__sample" style="font-family:'Fragment Mono',monospace;font-size:clamp(13px,2vw,17px);letter-spacing:.04em">Fragment Mono · datos · etiquetas</div><span class="type-row__meta">Mono · Labels, metadatos, precios, fechas</span></div>
+      <div class="type-row"><div class="type-row__sample" style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:450;font-size:clamp(22px,4vw,36px)">Fraunces — detalle expresivo</div><span class="type-row__meta">Serif itálica · Acentos expresivos en titulares</span></div>
+    </section>
+    <section class="section">
+      <div class="section__head"><span class="section__num">05</span><h2 class="section__title">Tono de voz</h2></div>
+      <div class="voice-grid">
+        <div class="voice-card voice-card--yes"><p class="voice-card__label voice-card__label--yes">Sí usamos</p><ul><li>Lenguaje directo y sin relleno</li><li>Frases cortas con intención</li><li>Términos técnicos cuando aportan valor</li><li>Primera persona singular (yo hago, yo entrego)</li><li>Tono cálido pero profesional</li><li>Humor sutil cuando el contexto lo permite</li></ul></div>
+        <div class="voice-card voice-card--no"><p class="voice-card__label voice-card__label--no">No usamos</p><ul><li>Jerga corporativa vacía</li><li>Superlativos sin evidencia</li><li>Exceso de emojis o signos de exclamación</li><li>Pasivo impersonal («se realizará»)</li><li>Promesas que no se pueden cumplir</li><li>Mayúsculas para énfasis en cuerpo de texto</li></ul></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__head"><span class="section__num">06</span><h2 class="section__title">Aplicaciones de marca</h2></div>
+      <div class="usage-grid">
+        <div class="usage-tile"><p class="usage-tile__tag">Documentos</p><h4>Cotizaciones y facturas</h4><p>Usa las plantillas del CRM. Fuente Switzer para texto corrido, Clash Display para el logotipo y títulos, Fragment Mono para números y metadatos.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Digital</p><h4>Web y portafolio</h4><p>Background Paper (#F7F6F2), acento Shoyu para CTAs, Nori para headers y footers oscuros. Espaciado generoso, tipografía clara.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Motion</p><h4>Intro / Outro</h4><p>Animación de la firma MoW disponible en la sección Motion. Usarla como cierre en videos de proyectos y presentaciones.</p></div>
+        <div class="usage-tile"><p class="usage-tile__tag">Social</p><h4>Redes y comunicación</h4><p>Fondo Paper o Nori, logotipo centrado o esquina superior izquierda. Texto en Switzer. Máximo dos fuentes por pieza.</p></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
