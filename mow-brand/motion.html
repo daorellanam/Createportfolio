@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoW — Intro / Outro</title>
+  <meta name="description" content="MoW brand motion — intro &amp; outro signature animation." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F7F6F2'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23E2542F'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hud">
+    <a class="hud__left" href="index.html" style="text-decoration:none;color:inherit"><span class="hud__dot"></span>← MoW · inicio</a>
+    <span class="hud__right">Guatemala · UX/UI</span>
+  </div>
+  <main class="stage">
+    <div class="scene is-intro" id="scene">
+      <div class="lockup" id="lockup">
+        <span class="lockup__letter m">M</span>
+        <span class="lockup__letter o">o</span>
+        <span class="lockup__letter w">W</span>
+      </div>
+      <p class="tagline">DISEÑO UX/UI · <b>PLAY</b> · CRAFT</p>
+    </div>
+  </main>
+  <div class="controls">
+    <button class="btn btn--accent" id="play-intro">▶ Intro</button>
+    <button class="btn" id="play-outro">■ Outro</button>
+  </div>
+  <script src="motion.js"></script>
+</body>
+</html>

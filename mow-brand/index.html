@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoW — Marca de Diego Orellana</title>
+  <meta name="description" content="MoW — kit de marca y CRM de Diego Orellana: identidad, motion, manual, cotizaciones y facturas." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314201A'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,450;9..144,1,450&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --paper:#F7F6F2;--paper-2:#F1EFE9;--ink:#1A1A17;--ink-soft:#57544C;--ink-faint:#908C81;
+      --line:#E3E0D8;--pino:#34503F;--shoyu:#E2542F;--shoyu-deep:#C23F1F;--amber:#F4B53F;--live:#2FA86B;--nori:#14201A;--nori-soft:#9FB0A6;
+      --display:"Clash Display","Switzer",system-ui,sans-serif;--sans:"Switzer",system-ui,sans-serif;--mono:"Fragment Mono",ui-monospace,monospace;--serif:"Fraunces",Georgia,serif;
+      --ease:cubic-bezier(0.22,1,0.36,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--sans);background:radial-gradient(120% 80% at 50% 0%,#FBFAF7 0%,var(--paper) 55%,var(--paper-2) 100%);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5}
+    .wrap{max-width:1080px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(20px,4vw,40px) 64px}
+    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(40px,7vw,80px)}
+    .brand{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.03em}
+    .brand .o{color:var(--shoyu)}
+    .avail{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+    .avail .dot{width:7px;height:7px;border-radius:50%;background:var(--live)}
+    .hero{margin-bottom:clamp(36px,6vw,64px)}
+    .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--shoyu);margin-bottom:18px}
+    .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,7vw,80px);letter-spacing:-.03em;line-height:1.02}
+    .hero h1 .it{font-family:var(--serif);font-style:italic;font-weight:450;color:var(--pino)}
+    .hero p{font-size:clamp(16px,1.8vw,19px);color:var(--ink-soft);max-width:54ch;margin-top:20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .tile{display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:184px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-decoration:none;color:inherit;transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease)}
+    .tile:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 18px 40px rgba(20,32,26,.10)}
+    .tile__top{display:flex;justify-content:space-between;align-items:flex-start}
+    .tile__ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--paper-2);font-size:20px}
+    .tile__arrow{color:var(--ink-faint);transition:transform .35s var(--ease),color .35s var(--ease)}
+    .tile:hover .tile__arrow{transform:translate(3px,-3px);color:var(--shoyu)}
+    .tile h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.01em;margin-bottom:5px}
+    .tile p{font-size:13.5px;color:var(--ink-soft)}
+    .tile__tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+    .tile--hero{grid-column:1/-1;flex-direction:row;align-items:center;background:var(--nori);border-color:var(--nori);color:#fff;min-height:auto;padding:28px 30px}
+    .tile--hero .tile__ico{background:rgba(255,255,255,.08);color:#fff}
+    .tile--hero h3{color:#fff}
+    .tile--hero p{color:var(--nori-soft)}
+    .tile--hero .tile__arrow{color:#fff}
+    .tile--hero:hover{box-shadow:0 18px 50px rgba(20,32,26,.3)}
+    .heroleft{display:flex;align-items:center;gap:20px;flex:1;min-width:0}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--shoyu);color:#fff;border-radius:999px;padding:11px 20px;font-size:14px;font-weight:500;white-space:nowrap}
+    .foot{margin-top:clamp(40px,6vw,72px);padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+    @media (max-width:600px){.tile--hero{flex-direction:column;align-items:flex-start;gap:18px}.pill{width:100%;justify-content:center}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <span class="brand">M<span class="o">o</span>W</span>
+      <span class="avail"><span class="dot"></span> Diego Orellana · UX/UI</span>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">Brand hub · Guatemala</p>
+      <h1>Tu marca MoW,<br><span class="it">en un solo lugar.</span></h1>
+      <p>Identidad, motion, manual y el CRM para gestionar clientes, cotizaciones y facturas — todo accesible desde cualquier dispositivo.</p>
+    </section>
+    <div class="grid">
+      <a class="tile tile--hero" href="crm.html">
+        <div class="heroleft">
+          <div class="tile__ico">◇</div>
+          <div>
+            <h3>Abrir el CRM</h3>
+            <p>Dashboard, clientes, cotizaciones y facturas. Edita tus datos cuando quieras.</p>
+          </div>
+        </div>
+        <span class="pill">Gestionar marca →</span>
+      </a>
+      <a class="tile" href="manual.html">
+        <div class="tile__top"><div class="tile__ico">▦</div><span class="tile__arrow">↗</span></div>
+        <div><h3>Mini manual</h3><p>Concepto, logo, color, tipografía y tono de voz.</p></div>
+      </a>
+      <a class="tile" href="motion.html">
+        <div class="tile__top"><div class="tile__ico">▶</div><span class="tile__arrow">↗</span></div>
+        <div><h3>Intro / Outro</h3><p>Motion graphic de la firma MoW. Reproducible y grabable.</p></div>
+      </a>
+      <a class="tile" href="cotizacion.html">
+        <div class="tile__top"><div class="tile__ico">▤</div><span class="tile__arrow">↗</span></div>
+        <div><h3>Cotización</h3><p class="tile__tag">Plantilla imprimible</p></div>
+      </a>
+      <a class="tile" href="factura.html">
+        <div class="tile__top"><div class="tile__ico">▥</div><span class="tile__arrow">↗</span></div>
+        <div><h3>Factura</h3><p class="tile__tag">Plantilla SAT · imprimible</p></div>
+      </a>
+    </div>
+    <footer class="foot">
+      <span>© 2026 MoW · Diego Orellana</span>
+      <span>Diseño UX/UI · Play · Craft</span>
+    </footer>
+  </div>
+</body>
+</html>

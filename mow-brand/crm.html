@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoW · CRM de marca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314201A'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='16' font-weight='bold' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,450;9..144,1,450&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="doc.css" />
+  <link rel="stylesheet" href="crm.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="side__brand">
+        <span class="side__logo">M<span class="o">o</span>W</span>
+        <span class="side__tag">CRM · Control de marca</span>
+        <a class="side__home" href="index.html">← Volver al inicio</a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span class="ico">◇</span> Dashboard</a>
+        <a href="#/cotizaciones" data-route="cotizaciones"><span class="ico">▤</span> Cotizaciones</a>
+        <a href="#/facturas" data-route="facturas"><span class="ico">▦</span> Facturas</a>
+        <a href="#/clientes" data-route="clientes"><span class="ico">◎</span> Clientes</a>
+        <a href="#/ajustes" data-route="ajustes"><span class="ico">⚙</span> Ajustes</a>
+      </nav>
+      <div class="side__foot">
+        <span class="side__avail"><span class="dot"></span> Datos guardados local</span>
+        <button id="export">⤓ Exportar backup</button>
+        <button id="import">⤒ Importar backup</button>
+        <input type="file" id="importfile" accept="application/json" hidden />
+      </div>
+    </aside>
+    <main class="main" id="view"></main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="printhost"></div>
+  <div class="toast" id="toast"></div>
+  <script src="crm.js"></script>
+</body>
+</html>
